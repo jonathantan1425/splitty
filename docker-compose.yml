@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  splitty:
+    image: splitty
+    container_name: splitty
+    ports:
+      - "8080:8080"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./data/:/app/data
+    environment:
+      TELEGRAM_API_KEY: "${TELEGRAM_API_KEY}"
